@@ -4,6 +4,7 @@ HackBNB est une plateforme en ligne permettant à des professionnels de la cyber
 
 Pour démarrer le projet en local, utiliser :
 ```bash
+cp .back.env.example .back.env
 docker compose up
 ```
 
