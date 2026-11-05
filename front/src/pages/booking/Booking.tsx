@@ -16,7 +16,7 @@ export const BookingPage = () => {
         const response = await apiBookingDetails(`${bookingId}`)
         setBooking(response.data)
 
-        const response2 = await apiBookingCheckoutLines(`${bookingId}`, response.data.stripe_checkout_session_id)
+        const response2 = await apiBookingCheckoutLines(`${bookingId}`)
         setCheckoutLines(response2.data)
     }
 

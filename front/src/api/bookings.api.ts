@@ -10,8 +10,8 @@ export const apiBookingDetails = (bookingReference: string) => {
 /**
  * Get booking checkout lines from API
  */
-export const apiBookingCheckoutLines = (bookingReference: string, checkoutSessionId: string) => {
-    return axios.get(`/bookings/${encodeURIComponent(bookingReference)}/checkout-lines?checkout_session_id=${encodeURIComponent(checkoutSessionId)}`)
+export const apiBookingCheckoutLines = (bookingReference: string) => {
+    return axios.get(`/bookings/${encodeURIComponent(bookingReference)}/checkout-lines`)
 }
 
 /**

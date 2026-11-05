@@ -1,6 +1,7 @@
 import os
 import stripe
 import requests
+import string
 
 def create_checkout(reference, name, unit_price, quantity, confirmation_secret):
     """
@@ -29,7 +30,8 @@ def create_checkout(reference, name, unit_price, quantity, confirmation_secret):
     )
 
 def get_checkout_lines(checkout_session_id):
-    url = f"https://api.stripe.com/v1/checkout/sessions/{checkout_session_id}/line_items"
+    checkout_session_id_filtered = "".join(filter(lambda c: c in string.ascii_letters+string.digits+"_", checkout_session_id))
+    url = f"https://api.stripe.com/v1/checkout/sessions/{checkout_session_id_filtered}/line_items"
 
     session = requests.Session()
     session.auth = (os.getenv('STRIPE_API_KEY'), "")
