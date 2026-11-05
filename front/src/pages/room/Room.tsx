@@ -47,7 +47,7 @@ export const RoomPage = () => {
                     <h1 className="text-xl">{room.title}</h1>
                     <h2 className="mt-1 text-md text-gray-300">{room.city}</h2>
 
-                    <h2 className="mt-4 text-md text-gray-300">Hôte : {room.host?.name}</h2>
+                    <h2 className="mt-4 text-md text-gray-300">Hôte : {room.host}</h2>
 
                     <div className="mt-8" dangerouslySetInnerHTML={{__html: room.description}}></div>
 

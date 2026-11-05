@@ -1,5 +1,3 @@
-import type { User } from "./user";
-
 export type Room = {
     id: string;
     title: string;
@@ -7,5 +5,5 @@ export type Room = {
     price: number;
     picture: string;
     description: string;
-    host?: User;
+    host?: string;
 }
