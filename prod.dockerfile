@@ -2,7 +2,10 @@
 FROM node:22 AS frontend
 WORKDIR /app
 COPY front .
-RUN npm install && npm run build
+RUN npm install 
+
+ENV NODE_ENV=production
+RUN npm run build
 
 # Setup Flask back-end
 FROM python:3
